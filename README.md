@@ -1,5 +1,7 @@
 # Research Paper Renamer
 
+Link to web-app: https://researcher-paper-renamer.streamlit.app
+
 Renames academic PDFs to **`Year_TitleInCamelCase.pdf`** (e.g. `2017_AttentionIsAllYouNeed.pdf`).
 
 It reads the first page of each PDF and figures out the title and year with a
