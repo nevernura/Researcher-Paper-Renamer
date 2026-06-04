@@ -30,23 +30,28 @@ works by upload/download.
 ## Run locally
 
 ```bash
-pip install -r requirements.txt
-streamlit run app.py
+python3 -m pip install -r requirements.txt
+python3 -m streamlit run app.py
 ```
 
 To make the app default to local-folder mode (so you can rename in place):
 
 ```bash
-PDF_RENAMER_LOCAL=1 streamlit run app.py        # macOS / Linux
-set PDF_RENAMER_LOCAL=1 && streamlit run app.py # Windows (cmd)
+PDF_RENAMER_LOCAL=1 python3 -m streamlit run app.py        # macOS / Linux
+set PDF_RENAMER_LOCAL=1 && py -m streamlit run app.py       # Windows (cmd)
 ```
 
 You can always switch modes from the sidebar regardless.
 
+If the `streamlit` command is not found, the module form above still works as
+long as the package installed successfully.
+
 ## Deploy the hosted version (free)
 
-1. Push `app.py`, `core.py`, and `requirements.txt` to a GitHub repo.
-2. Go to share.streamlit.io, connect the repo, and pick `app.py`.
+1. Push `streamlit_app.py`, `app.py`, `core.py`, `requirements.txt`, and
+   `runtime.txt` to a GitHub repo.
+2. Go to share.streamlit.io, connect the repo, and pick `streamlit_app.py`
+   (or `app.py`; both entry points launch the same app).
 3. That's it — you get a public URL to share.
 
 The hosted app works **with no key** (CrossRef only). Each user can optionally
@@ -81,5 +86,6 @@ may need to be processed in chunks.
 ## Files
 
 - `app.py` — Streamlit UI (both modes)
+- `streamlit_app.py` — conventional Streamlit Cloud entry point
 - `core.py` — extraction + filename logic, no Streamlit dependency (unit-testable)
 - `requirements.txt` — dependencies
