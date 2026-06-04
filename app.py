@@ -9,8 +9,8 @@ Two modes, same code:
   * Local folder mode     : point at a folder -> review -> rename in place OR
                             copy renamed to a new folder, with an undo log.
 
-Run locally:   streamlit run app.py        (set PDF_RENAMER_LOCAL=1 to default
-                                             the UI to local-folder mode)
+Run locally:   python3 -m streamlit run app.py
+               (set PDF_RENAMER_LOCAL=1 to default the UI to local-folder mode)
 """
 
 import io
